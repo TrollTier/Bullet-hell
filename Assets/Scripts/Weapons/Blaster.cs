@@ -52,7 +52,7 @@ public class Blaster : MonoBehaviour {
         if (muzzle != null)
         {
             muzzle.SetActive(true);
-            muzzleCoolDown = coolDown - 0.01f;
+            muzzleCoolDown = coolDown / 2f;
         }
 
         LaserFactory.CreateLaser(this);
