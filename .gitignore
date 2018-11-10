@@ -1,0 +1,7 @@
+Library/
+Bin/
+obj/
+Temp/
+v15/
+DesignTimeBuild/
+*.info
