@@ -87,7 +87,7 @@ namespace Assets.Scripts
             var hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.up).normalized, Mathf.Infinity, rayMask);
             if (hit.collider != null)
             {
-                linePoints[1] = hit.collider.transform.position;
+                linePoints[1] = hit.point;
                 var health = hit.collider.GetComponent<Health>();
                 if (health != null)
                     health.InflictDamage(damage);

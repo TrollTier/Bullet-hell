@@ -164,6 +164,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1926397590593054, guid: eddbbc2aaaea2c944895e625d8dea092,
     type: 2}
   m_PrefabInternal: {fileID: 1359977007}
+--- !u!108 &319667153 stripped
+Light:
+  m_CorrespondingSourceObject: {fileID: 108237064647448400, guid: bc614347d3a6859439cc52b9fb5f06ad,
+    type: 2}
+  m_PrefabInternal: {fileID: 1140684142}
 --- !u!1001 &353357538
 Prefab:
   m_ObjectHideFlags: 0
@@ -756,6 +761,30 @@ Prefab:
       propertyPath: m_RootOrder
       value: 11
       objectReference: {fileID: 0}
+    - target: {fileID: 114028403606053148, guid: bc614347d3a6859439cc52b9fb5f06ad,
+        type: 2}
+      propertyPath: coolDown
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114538330945339332, guid: bc614347d3a6859439cc52b9fb5f06ad,
+        type: 2}
+      propertyPath: coolDown
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108237064647448400, guid: bc614347d3a6859439cc52b9fb5f06ad,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1759071885311646, guid: bc614347d3a6859439cc52b9fb5f06ad, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114183551935784494, guid: bc614347d3a6859439cc52b9fb5f06ad,
+        type: 2}
+      propertyPath: muzzleFlare
+      value: 
+      objectReference: {fileID: 319667153}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc614347d3a6859439cc52b9fb5f06ad, type: 2}
   m_IsPrefabAsset: 0
