@@ -13,12 +13,15 @@ namespace Assets.Scripts
         public int duration = 120;
         public LineRenderer lineRenderer;
         public Light muzzleFlare;
+        public GameObject hitEffect;
 
 
         private void Start()
         {
             muzzleRange = muzzleFlare.range;
             muzzleDecline = (muzzleRange / coolDown);
+
+            hitParticle = hitEffect.GetComponent<ParticleSystem>();
         }
 
         private float muzzleRange = 0.1f;
@@ -74,12 +77,14 @@ namespace Assets.Scripts
                     lineRenderer.SetPositions(emptyPositions);
                     isShooting = false;
                     framesUntilUsable = coolDown;
+                    hitParticle.Stop();
                 }
             }
         }
 
         private Vector3[] linePoints = new Vector3[2];
         private const int rayMask = ~(1 << 1);
+        private ParticleSystem hitParticle;
         private void SendRay()
         {
             linePoints[0] = transform.position;
@@ -88,6 +93,11 @@ namespace Assets.Scripts
             if (hit.collider != null)
             {
                 linePoints[1] = hit.point;
+                hitEffect.transform.position = hit.point;
+
+                if (!hitParticle.isPlaying)
+                    hitParticle.Play();
+
                 var health = hit.collider.GetComponent<Health>();
                 if (health != null)
                     health.InflictDamage(damage);
@@ -95,6 +105,7 @@ namespace Assets.Scripts
             else
             {
                 linePoints[1] = transform.TransformDirection(Vector2.up).normalized * 1000;
+                hitParticle.Stop();
             }
 
             lineRenderer.SetPositions(linePoints);
