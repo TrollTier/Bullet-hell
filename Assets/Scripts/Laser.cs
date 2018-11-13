@@ -5,11 +5,32 @@ using UnityEngine;
 public class Laser : MonoBehaviour {
     public static readonly Vector2 size = new Vector2(0.03425455f, 0.1914676f);
 
+    public ParticleSystem hitParticle;
+
     private Vector3 direction;
     private LaserProperties properties;
 
+
+    private void Awake()
+    {
+        renderer = GetComponent<Renderer>();
+    }
+
+    private bool hasHit = false;
+    private void Update()
+    {
+        if (hasHit && !hitParticle.isPlaying)
+        {
+            gameObject.SetActive(false);
+            hitParticle.Stop();
+            hitParticle.Clear();
+        }
+    }
+
     private float flewnDistance;
     void FixedUpdate () {
+        if (hasHit) return;
+
         var oldPos = transform.position;
         transform.position += (direction * properties.velocity * Time.deltaTime);
         
@@ -24,13 +45,18 @@ public class Laser : MonoBehaviour {
     {
         this.properties = properties;
         this.direction = direction;
-        
+
+        hasHit = false;
         flewnDistance = 0f;
+
+        renderer.enabled = true;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Equals(collision.transform.root.gameObject, properties.shotBy)) return;
+        if  (hasHit || Equals(collision.transform.root.gameObject, properties.shotBy)) return;
+
+        hitParticle.Play();
 
         var health = collision.GetComponent<Health>();
         if (health != null)
@@ -39,8 +65,10 @@ public class Laser : MonoBehaviour {
         Die();
     }
 
+    private new Renderer renderer;
     private void Die()
     {
-        LaserFactory.AddDeadLaser(gameObject);
+        hasHit = true;
+        renderer.enabled = false;
     }
 }

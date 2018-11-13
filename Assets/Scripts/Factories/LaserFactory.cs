@@ -77,10 +77,4 @@ public class LaserFactory
 
         return laser;
     }
-
-
-    public static void AddDeadLaser(GameObject laser)
-    {
-        laser.SetActive(false);
-    }
 }
