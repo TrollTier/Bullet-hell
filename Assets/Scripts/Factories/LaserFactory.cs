@@ -20,7 +20,7 @@ public class LaserFactory
         prefab = resource;
 
         lasers.Clear();
-        for (int i = 0; i < 500; i++)
+        for (int i = 0; i < 1000; i++)
         {
             var laser = GameObject.Instantiate<GameObject>(resource);
             laser.SetActive(false);

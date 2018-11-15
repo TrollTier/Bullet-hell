@@ -24,6 +24,11 @@ namespace Assets.Scripts
             hitParticle = hitEffect.GetComponent<ParticleSystem>();
         }
 
+        public bool CanFire()
+        {
+            return (!isShooting && framesUntilUsable == 0);
+        }
+
         private float muzzleRange = 0.1f;
         public void Fire()
         {
@@ -70,8 +75,7 @@ namespace Assets.Scripts
             else
             {
                 framesLeft = Math.Max(0, framesLeft - 1);
-                SendRay();
-
+                
                 if (framesLeft == 0)
                 {
                     lineRenderer.SetPositions(emptyPositions);
@@ -79,14 +83,26 @@ namespace Assets.Scripts
                     framesUntilUsable = coolDown;
                     hitParticle.Stop();
                 }
+                else { SendRay(); }
             }
         }
+
+        public Color[] colors;
 
         private Vector3[] linePoints = new Vector3[2];
         private const int rayMask = ~(1 << 1);
         private ParticleSystem hitParticle;
+        private int currentColor = 0;
         private void SendRay()
         {
+            if (colors != null && colors.Length > 0)
+            {
+                var color = colors[currentColor];
+                lineRenderer.startColor = color;
+                lineRenderer.endColor = color;
+                currentColor = (currentColor + 1) % colors.Length;
+            }
+
             linePoints[0] = transform.position;
             
             var hit = Physics2D.Raycast(transform.position, transform.TransformDirection(Vector2.up).normalized, Mathf.Infinity, rayMask);

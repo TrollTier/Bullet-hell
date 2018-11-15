@@ -57,6 +57,7 @@ GameObject:
   - component: {fileID: 114252987918016118}
   - component: {fileID: 114790694307820872}
   - component: {fileID: 50461564770735926}
+  - component: {fileID: 114948621857693882}
   m_Layer: 9
   m_Name: Lasertower (4)
   m_TagString: Untagged
@@ -78,6 +79,7 @@ GameObject:
   - component: {fileID: 114635824020123016}
   - component: {fileID: 114729389707878546}
   - component: {fileID: 50690066818144438}
+  - component: {fileID: 114764519736472750}
   m_Layer: 9
   m_Name: Lasertower (3)
   m_TagString: Untagged
@@ -149,6 +151,7 @@ GameObject:
   - component: {fileID: 50592097572724398}
   - component: {fileID: 114107040568521752}
   - component: {fileID: 114193063241478500}
+  - component: {fileID: 114746274313543138}
   m_Layer: 9
   m_Name: ShipSpawn
   m_TagString: Untagged
@@ -665,6 +668,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpMax: 500
+  hpCurrent: 0
 --- !u!114 &114193063241478500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -689,6 +693,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpMax: 50
+  hpCurrent: 0
 --- !u!114 &114467741382624858
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -733,6 +738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hpMax: 50
+  hpCurrent: 0
 --- !u!114 &114726153033442368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -757,6 +763,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
+--- !u!114 &114746274313543138
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1926397590593054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &114764519736472750
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1413318336066676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114784971836380816
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -781,6 +809,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: 0
+--- !u!114 &114948621857693882
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1405250285333572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212069393019016562
 SpriteRenderer:
   m_ObjectHideFlags: 1

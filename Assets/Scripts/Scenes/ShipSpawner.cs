@@ -19,7 +19,7 @@ namespace Assets.Scripts.Scenes
         }
 
         private int framesUntilSpawn = 120;
-        private void Update()
+        private void LateUpdate()
         {
             framesUntilSpawn--;
 

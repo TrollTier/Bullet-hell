@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Assets.Scripts;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -13,8 +14,12 @@ public class DestroyerAI : MonoBehaviour {
         player = playerObject.transform;
 	}
 
+    public DeathRay ray;
     private Transform player;
     void Update () {
+        if (ray.CanFire())
+            ray.Fire();
+
         if (!Mathf.Approximately(rotationAngle, 0)) return;
 
         var movingLeft = transform.rotation.z > 0f;

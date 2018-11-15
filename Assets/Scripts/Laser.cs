@@ -6,42 +6,20 @@ public class Laser : MonoBehaviour {
     public static readonly Vector2 size = new Vector2(0.03425455f, 0.1914676f);
 
     public ParticleSystem hitParticle;
+    public Vector3 direction;
+    public LaserProperties properties;
+    public float flewnDistance;
 
-    private Vector3 direction;
-    private LaserProperties properties;
-
+    private bool hasHit = false;
+    public bool HasHit { get { return hasHit; } }
 
     private void Awake()
     {
         renderer = GetComponent<Renderer>();
     }
 
-    private bool hasHit = false;
-    private void Update()
-    {
-        if (hasHit && !hitParticle.isPlaying)
-        {
-            gameObject.SetActive(false);
-            hitParticle.Stop();
-            hitParticle.Clear();
-        }
-    }
-
-    private float flewnDistance;
-    void FixedUpdate () {
-        if (hasHit) return;
-
-        var oldPos = transform.position;
-        transform.position += (direction * properties.velocity * Time.deltaTime);
-        
-        flewnDistance += Vector2.Distance(oldPos, transform.position);
-        if (flewnDistance >= properties.reach)
-        {
-            Die();
-        }
-	}
-
-    public void Reset(LaserProperties properties, Vector3 direction)
+    
+     public void Reset(LaserProperties properties, Vector3 direction)
     {
         this.properties = properties;
         this.direction = direction;
@@ -66,7 +44,7 @@ public class Laser : MonoBehaviour {
     }
 
     private new Renderer renderer;
-    private void Die()
+    public void Die()
     {
         hasHit = true;
         renderer.enabled = false;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Health : MonoBehaviour {
 
     public float hpMax;
-    private float hpCurrent;
+    public float hpCurrent;
 
     private void Start()
     {
@@ -15,15 +15,5 @@ public class Health : MonoBehaviour {
     public void InflictDamage(float damage)
     {
         hpCurrent = Mathf.Max(hpCurrent - damage, 0);
-
-        if (hpCurrent == 0)
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    public float GetCurrentHp()
-    {
-        return hpCurrent;
     }
 }

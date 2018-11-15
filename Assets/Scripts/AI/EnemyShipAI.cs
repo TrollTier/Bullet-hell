@@ -29,7 +29,7 @@ public class EnemyShipAI : MonoBehaviour {
             if (blaster.reach >= distance && blaster.CanFire())
             {
                 var hit = Physics2D.BoxCast(blaster.gameObject.transform.position, Laser.size, 0f, dir, blaster.reach, rayMask);
-                if (hit.collider == null || hit.collider.gameObject == null || string.Equals(hit.collider.gameObject.tag, "Player"))
+                if (hit.collider == null || hit.collider.gameObject == null || hit.collider.gameObject.transform == player)
                     blaster.Fire();
             }
         }

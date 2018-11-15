@@ -67,7 +67,7 @@ namespace Assets.Scripts
             var x = screenPos.x - sprite.sprite.pivot.x + (sprite.sprite.rect.width * 0.25f);
             var y = Screen.height - screenPos.y - sprite.sprite.pivot.y + sprite.sprite.rect.height + 5;
 
-            var percentFactor = health.GetCurrentHp() / health.hpMax;
+            var percentFactor = health.hpCurrent / health.hpMax;
             var width = sprite.sprite.rect.width / 2;
             var healthWidth = width * percentFactor;
 
@@ -89,7 +89,7 @@ namespace Assets.Scripts
             var x = screenPos.x - sprite.sprite.pivot.x + (sprite.sprite.rect.width + 5);
             var y = Screen.height - screenPos.y - sprite.sprite.pivot.y + (sprite.sprite.rect.height * 0.25f);
 
-            var percentFactor = health.GetCurrentHp() / health.hpMax;
+            var percentFactor = health.hpCurrent / health.hpMax;
             var height = sprite.sprite.rect.height / 2;
             var healthHeight = height * percentFactor;
 
