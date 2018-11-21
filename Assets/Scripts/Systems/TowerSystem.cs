@@ -20,15 +20,16 @@ namespace Assets.Scripts.Systems
         protected override void OnUpdate()
         {
             var player = GameObject.FindGameObjectWithTag("Player");
-            var entities = GetEntities<Components>();
+            var playerPosition = player.transform.position;
             var blastersToFire = new List<Blaster>();
 
+            var entities = GetEntities<Components>();
             foreach (var e in entities)
             {
-                var dir = (Vector2)(player.transform.position - e.transform.position);
+                var dir = (Vector2)(playerPosition - e.transform.position);
                 e.transform.up = dir;
 
-                if (dir.magnitude <= e.tower.blaster.reach && e.tower.blaster.CanFire())
+                if (dir.magnitude <= e.tower.blaster.reach)
                 {
                     var hit = Physics2D.BoxCast(e.tower.blaster.gameObject.transform.position, Laser.size, 0f, dir, e.tower.blaster.reach, rayMask);
                     if (hit.collider != null && hit.collider.gameObject != null && (hit.collider.gameObject == player))
