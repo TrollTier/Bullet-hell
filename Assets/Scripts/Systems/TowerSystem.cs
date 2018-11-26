@@ -16,10 +16,10 @@ namespace Assets.Scripts.Systems
             public Tower tower;
         }
 
-        private const int rayMask = ~(1 << 1);
+        private const int rayMask = ~(1 << 10);
         protected override void OnUpdate()
         {
-            var player = GameObject.FindGameObjectWithTag("Player");
+            var player = Player.info;
             var playerPosition = player.transform.position;
             var blastersToFire = new List<Blaster>();
 
@@ -32,7 +32,7 @@ namespace Assets.Scripts.Systems
                 if (dir.magnitude <= e.tower.blaster.reach)
                 {
                     var hit = Physics2D.BoxCast(e.tower.blaster.gameObject.transform.position, Laser.size, 0f, dir, e.tower.blaster.reach, rayMask);
-                    if (hit.collider != null && hit.collider.gameObject != null && (hit.collider.gameObject == player))
+                    if (hit.collider != null && hit.collider.gameObject != null && (hit.collider.gameObject == player.playerObject))
                         blastersToFire.Add(e.tower.blaster);
                 }
             }

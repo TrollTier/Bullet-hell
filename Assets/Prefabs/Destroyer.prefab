@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 4784410721869238}
   - component: {fileID: 114244589238627060}
   - component: {fileID: 120986007596788802}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ray (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -136,7 +136,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4365160955054100}
   - component: {fileID: 108768241275671070}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Muzzleflare
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 4247160388569134}
   - component: {fileID: 198550905085778860}
   - component: {fileID: 199895318258790072}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Hit effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1119,7 +1119,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1352197842677386}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 21.743, y: 0.881, z: 0}
+  m_LocalPosition: {x: 25.677, y: -2.154, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4616487045897924}

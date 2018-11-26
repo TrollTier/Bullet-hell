@@ -90,7 +90,7 @@ namespace Assets.Scripts
         public Color[] colors;
 
         private Vector3[] linePoints = new Vector3[2];
-        private const int rayMask = ~(1 << 1);
+        private const int rayMask = ~(1 << 10);
         private ParticleSystem hitParticle;
         private int currentColor = 0;
         private void SendRay()

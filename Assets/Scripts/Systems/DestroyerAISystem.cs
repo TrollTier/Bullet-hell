@@ -21,7 +21,7 @@ namespace Assets.Scripts.Systems
         protected override void OnUpdate()
         {
             var entities = GetEntities<Components>();
-            var player = GameObject.FindGameObjectWithTag("Player").transform;
+            var player = Player.info.transform;
 
             foreach (var destroyer in entities)
             {
