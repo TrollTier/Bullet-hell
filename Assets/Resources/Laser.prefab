@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 61014599964681190}
   - component: {fileID: 114676190052201726}
   - component: {fileID: 114267567170012070}
-  m_Layer: 1
+  m_Layer: 10
   m_Name: Laser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 4997390555385102}
   - component: {fileID: 198053129852976330}
   - component: {fileID: 199377384438267932}
-  m_Layer: 1
+  m_Layer: 10
   m_Name: Hitparticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
