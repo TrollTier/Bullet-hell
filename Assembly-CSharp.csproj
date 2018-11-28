@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\Systems\HealthSystem.cs" />
     <Compile Include="Assets\Scripts\Systems\LaserSystem.cs" />
     <Compile Include="Assets\Scripts\Systems\RotatorSystem.cs" />
+    <Compile Include="Assets\Scripts\Systems\ShipSpawnSystem.cs" />
     <Compile Include="Assets\Scripts\Systems\TowerSystem.cs" />
     <Compile Include="Assets\Scripts\Systems\VisibleDamageEffectSystem.cs" />
     <Compile Include="Assets\Scripts\Targets\DestroyTarget.cs" />

@@ -194,7 +194,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1926397590593054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.68977, y: -4.0775857, z: 0.18164062}
+  m_LocalPosition: {x: 12.076419, y: -0.49462736, z: 0.18164062}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4051850598539180}
@@ -710,7 +710,7 @@ MonoBehaviour:
   viewport: {fileID: 0}
   shipPrefab: {fileID: 1262598808550348, guid: c1c30ba8d3f8df041b9efc992531a4f3, type: 2}
   spawnPoint: {fileID: 1935692802085010}
-  spawnFrames: 500
+  spawnSeconds: 5
 --- !u!114 &114635824020123016
 MonoBehaviour:
   m_ObjectHideFlags: 1

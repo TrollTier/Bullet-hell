@@ -8,28 +8,15 @@ namespace Assets.Scripts.Scenes
 {
     public class ShipSpawner : MonoBehaviour
     {
-        public Camera viewport;
         public GameObject shipPrefab;
         public GameObject spawnPoint; 
-        public int spawnFrames = 120;
+        public float spawnSeconds = 2;
+        [HideInInspector]
+        public float secondsToSpawn = 2;
 
         private void Start()
         {
-            framesUntilSpawn = spawnFrames;
-        }
-
-        private int framesUntilSpawn = 120;
-        private void LateUpdate()
-        {
-            framesUntilSpawn--;
-
-            if (framesUntilSpawn == 0)
-            {
-                framesUntilSpawn = spawnFrames;
-                var obj = GameObject.Instantiate(shipPrefab);
-
-                obj.transform.position = spawnPoint.transform.position;
-            }
+            secondsToSpawn = spawnSeconds;
         }
     }
 }
