@@ -10,7 +10,7 @@ namespace Assets.Scripts.Systems
 {
     class TowerSystem : ComponentSystem
     {
-        struct Components
+        struct Data
         {
             public Transform transform;
             public Tower tower;
@@ -23,7 +23,7 @@ namespace Assets.Scripts.Systems
             var playerPosition = player.transform.position;
             var blastersToFire = new List<Blaster>();
 
-            var entities = GetEntities<Components>();
+            var entities = GetEntities<Data>();
             foreach (var e in entities)
             {
                 var dir = (Vector2)(playerPosition - e.transform.position);
@@ -38,7 +38,9 @@ namespace Assets.Scripts.Systems
             }
 
             foreach (var blaster in blastersToFire)
+            {
                 blaster.Fire();
+            }
         }
     }
 }

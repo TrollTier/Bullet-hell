@@ -10,7 +10,7 @@ public enum ShootDirections
     Down
 }
 
-public class LaserProperties 
+public class LaserProperties
 {
     public float velocity;
     public float reach;

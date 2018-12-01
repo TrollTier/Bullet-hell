@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class LaserFactory 
+class LaserFactory 
 {
     /// <summary>
     /// This games uses a factory for lasers to make use of object pooling.

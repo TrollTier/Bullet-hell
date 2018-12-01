@@ -1,21 +1,20 @@
-﻿using System.Collections;
+﻿using Assets.Scripts.Data;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Laser : MonoBehaviour {
     public static readonly Vector2 size = new Vector2(0.03425455f, 0.1914676f);
 
-    public ParticleSystem hitParticle;
     public Vector3 direction;
     public LaserProperties properties;
     public float flewnDistance;
-
-    private bool hasHit = false;
-    public bool HasHit { get { return hasHit; } }
+    public HitInfo hitInfo;
 
     private void Awake()
     {
         renderer = GetComponent<Renderer>();
+        hitInfo = GetComponent<HitInfo>();
     }
 
     
@@ -24,7 +23,7 @@ public class Laser : MonoBehaviour {
         this.properties = properties;
         this.direction = direction;
 
-        hasHit = false;
+        hitInfo.HasHit = false;
         flewnDistance = 0f;
 
         renderer.enabled = true;
@@ -32,9 +31,9 @@ public class Laser : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if  (hasHit || Equals(collision.transform.root.gameObject, properties.shotBy)) return;
+        if  (hitInfo.HasHit || Equals(collision.transform.root.gameObject, properties.shotBy)) return;
 
-        hitParticle.Play();
+        hitInfo.Particles.Play();
 
         var health = collision.GetComponent<Health>();
         if (health != null)
@@ -46,7 +45,7 @@ public class Laser : MonoBehaviour {
     private new Renderer renderer;
     public void Die()
     {
-        hasHit = true;
+        hitInfo.HasHit= true;
         renderer.enabled = false;
     }
 }

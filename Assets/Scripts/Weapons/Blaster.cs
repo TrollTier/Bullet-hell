@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //All timing related values are in milliseconds
-public class Blaster : MonoBehaviour {
+class Blaster : MonoBehaviour {
 
     public float velocity;
     public float reach;
@@ -26,7 +26,7 @@ public class Blaster : MonoBehaviour {
 
     private float muzzleCoolDown = 0;
     private float timeToCoolDown = 0;
-    void Update()
+    public void Update()
     {
         timeToCoolDown = System.Math.Max(timeToCoolDown - Time.deltaTime, 0);
 

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tower : MonoBehaviour {
+class Tower : MonoBehaviour {
 
     public Blaster blaster;
 

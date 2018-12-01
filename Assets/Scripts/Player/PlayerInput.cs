@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerInput : MonoBehaviour {
+class PlayerInput : MonoBehaviour {
 
     public Blaster[] blasters;
     public DeathRay[] rays;

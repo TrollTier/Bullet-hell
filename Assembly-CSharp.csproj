@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\AI\EnemyShipAI.cs" />
     <Compile Include="Assets\Scripts\AI\RotatingTower.cs" />
     <Compile Include="Assets\Scripts\AI\Tower.cs" />
+    <Compile Include="Assets\Scripts\Data\HitInfo.cs" />
     <Compile Include="Assets\Scripts\Data\LaserProperties.cs" />
     <Compile Include="Assets\Scripts\Data\VisibleDamageEffect.cs" />
     <Compile Include="Assets\Scripts\Factories\LaserFactory.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Assets\Scripts\Scenes\Planetrotator.cs" />
     <Compile Include="Assets\Scripts\Scenes\ShipSpawner.cs" />
     <Compile Include="Assets\Scripts\Ship.cs" />
+    <Compile Include="Assets\Scripts\Systems\BlasterSystem.cs" />
     <Compile Include="Assets\Scripts\Systems\DestroyerAISystem.cs" />
     <Compile Include="Assets\Scripts\Systems\EnemyShipAISytem.cs" />
     <Compile Include="Assets\Scripts\Systems\HealthSystem.cs" />

@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 61014599964681190}
   - component: {fileID: 114676190052201726}
   - component: {fileID: 114267567170012070}
+  - component: {fileID: 114844667016106824}
   m_Layer: 10
   m_Name: Laser
   m_TagString: Untagged
@@ -121,9 +122,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac9a60b80efab4944bda76c3fa8e0929, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitParticle: {fileID: 198053129852976330}
   direction: {x: 0, y: 0, z: 0}
   flewnDistance: 0
+  hitInfo: {fileID: 114844667016106824}
+--- !u!114 &114844667016106824
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1213822434332756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9ea766fdc28d7c44bf6aedf396782fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HasHit: 0
+  Particles: {fileID: 198053129852976330}
 --- !u!198 &198053129852976330
 ParticleSystem:
   m_ObjectHideFlags: 1
