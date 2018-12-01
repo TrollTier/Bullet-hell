@@ -36,6 +36,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4385069904380888}
   - component: {fileID: 114467741382624858}
+  - component: {fileID: 114192487711354102}
   m_Layer: 9
   m_Name: Blaster
   m_TagString: Untagged
@@ -128,6 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4356223823044536}
   - component: {fileID: 114041082079580318}
+  - component: {fileID: 114611370640715376}
   m_Layer: 9
   m_Name: Blaster
   m_TagString: Untagged
@@ -194,7 +196,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1926397590593054}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.076419, y: -0.49462736, z: 0.18164062}
+  m_LocalPosition: {x: 11.802, y: 2.283, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4051850598539180}
@@ -666,6 +668,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hpMax: 500
   hpCurrent: 0
+--- !u!114 &114192487711354102
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1119802710146608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114252987918016118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -707,10 +720,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdda5c0233e75114080edd680218f3fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewport: {fileID: 0}
   shipPrefab: {fileID: 1262598808550348, guid: c1c30ba8d3f8df041b9efc992531a4f3, type: 2}
   spawnPoint: {fileID: 1935692802085010}
   spawnSeconds: 5
+  secondsToSpawn: 2
+--- !u!114 &114611370640715376
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1800435925445604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114635824020123016
 MonoBehaviour:
   m_ObjectHideFlags: 1

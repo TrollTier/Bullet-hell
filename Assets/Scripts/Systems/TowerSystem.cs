@@ -12,9 +12,12 @@ namespace Assets.Scripts.Systems
     {
         struct Data
         {
-            public Transform transform;
-            public Tower tower;
+            public readonly int Length;
+            public ComponentArray<Transform> Transforms;
+            public ComponentArray<Tower> Towers;
         }
+
+        [Inject] private Data data;
 
         private const int rayMask = ~(1 << 10);
         protected override void OnUpdate()
@@ -23,20 +26,22 @@ namespace Assets.Scripts.Systems
             var playerPosition = player.transform.position;
             var blastersToFire = new List<Blaster>();
 
-            var entities = GetEntities<Data>();
-            foreach (var e in entities)
+            for (int i = 0; i < data.Length; i++)
             {
-                var dir = (Vector2)(playerPosition - e.transform.position);
-                e.transform.up = dir;
+                var tower = data.Towers[i];
+                var transform = data.Transforms[i];
 
-                if (dir.magnitude <= e.tower.blaster.reach)
+                var dir = (Vector2)(playerPosition - transform.position);
+                transform.up = dir;
+
+                if (dir.magnitude <= tower.blaster.reach)
                 {
-                    var hit = Physics2D.BoxCast(e.tower.blaster.gameObject.transform.position, Laser.size, 0f, dir, e.tower.blaster.reach, rayMask);
+                    var hit = Physics2D.BoxCast(tower.blaster.gameObject.transform.position, Laser.size, 0f, dir, tower.blaster.reach, rayMask);
                     if (hit.collider != null && hit.collider.gameObject != null && (hit.collider.gameObject == player.playerObject))
-                        blastersToFire.Add(e.tower.blaster);
+                        blastersToFire.Add(tower.blaster);
                 }
             }
-
+            
             foreach (var blaster in blastersToFire)
             {
                 blaster.Fire();

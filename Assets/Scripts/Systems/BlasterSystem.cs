@@ -27,7 +27,7 @@ namespace Assets.Scripts.Systems
             for (int i = 0; i < data.Length; i++)
             {
                 var blaster = data.Blasters[i];
-                //blaster.Cooldown();
+                blaster.Cooldown();
             }
         }
     }

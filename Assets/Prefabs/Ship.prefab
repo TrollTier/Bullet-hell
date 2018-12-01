@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4069741793339872}
   - component: {fileID: 114646803656176348}
+  - component: {fileID: 114654015889992530}
   m_Layer: 0
   m_Name: Blaster
   m_TagString: Untagged
@@ -97,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1262598808550348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.373438, y: -3.0660665, z: 0}
+  m_LocalPosition: {x: -0.5344968, y: 1.5854642, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4069741793339872}
@@ -232,6 +233,17 @@ MonoBehaviour:
   coolDown: 0.1
   shotDirection: 0
   muzzle: {fileID: 1516043280548622}
+--- !u!114 &114654015889992530
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1236061353551692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212428300605043342
 SpriteRenderer:
   m_ObjectHideFlags: 1

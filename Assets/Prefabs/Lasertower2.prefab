@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4740086239468542}
   - component: {fileID: 114668467740394378}
+  - component: {fileID: 114662851035842632}
   m_Layer: 9
   m_Name: Blaster up
   m_TagString: Untagged
@@ -75,6 +76,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4690102138568182}
   - component: {fileID: 114244751772788124}
+  - component: {fileID: 114190572587285724}
   m_Layer: 9
   m_Name: Blaster down
   m_TagString: Untagged
@@ -318,6 +320,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114190572587285724
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1417507699026488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114233846374344938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -376,6 +389,17 @@ MonoBehaviour:
   blasters:
   - {fileID: 114668467740394378}
   - {fileID: 114244751772788124}
+--- !u!114 &114662851035842632
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1056297007037364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bf10cdea1344482e91a4f2b58506b77, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114668467740394378
 MonoBehaviour:
   m_ObjectHideFlags: 1

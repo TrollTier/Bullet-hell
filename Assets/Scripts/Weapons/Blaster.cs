@@ -26,7 +26,7 @@ class Blaster : MonoBehaviour {
 
     private float muzzleCoolDown = 0;
     private float timeToCoolDown = 0;
-    public void Update()
+    public void Cooldown()
     {
         timeToCoolDown = System.Math.Max(timeToCoolDown - Time.deltaTime, 0);
 
