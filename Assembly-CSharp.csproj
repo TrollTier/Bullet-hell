@@ -66,6 +66,8 @@
     <Compile Include="Assets\Scripts\AI\Tower.cs" />
     <Compile Include="Assets\Scripts\Data\HitInfo.cs" />
     <Compile Include="Assets\Scripts\Data\LaserProperties.cs" />
+    <Compile Include="Assets\Scripts\Data\Tank.cs" />
+    <Compile Include="Assets\Scripts\Data\TankData.cs" />
     <Compile Include="Assets\Scripts\Data\VisibleDamageEffect.cs" />
     <Compile Include="Assets\Scripts\Factories\LaserFactory.cs" />
     <Compile Include="Assets\Scripts\FollowObject.cs" />
@@ -74,6 +76,7 @@
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerInput.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerMovement.cs" />
+    <Compile Include="Assets\Scripts\Player\TankInput.cs" />
     <Compile Include="Assets\Scripts\Rotator.cs" />
     <Compile Include="Assets\Scripts\Scenes\MeteorSpawner.cs" />
     <Compile Include="Assets\Scripts\Scenes\Planetrotator.cs" />
@@ -86,6 +89,8 @@
     <Compile Include="Assets\Scripts\Systems\LaserSystem.cs" />
     <Compile Include="Assets\Scripts\Systems\RotatorSystem.cs" />
     <Compile Include="Assets\Scripts\Systems\ShipSpawnSystem.cs" />
+    <Compile Include="Assets\Scripts\Systems\TankInputSystem.cs" />
+    <Compile Include="Assets\Scripts\Systems\TankSystem.cs" />
     <Compile Include="Assets\Scripts\Systems\TowerSystem.cs" />
     <Compile Include="Assets\Scripts\Systems\VisibleDamageEffectSystem.cs" />
     <Compile Include="Assets\Scripts\Targets\DestroyTarget.cs" />
