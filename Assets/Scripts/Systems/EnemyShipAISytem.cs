@@ -20,10 +20,12 @@ namespace Assets.Scripts.Systems
         private const int rayMask = ~(1 << 10);
         protected override void OnUpdate()
         {
+            var entities = GetEntities<Components>();
+            if (entities.Length == 0) return;
+
             var playerInfo = Player.info;
             var playerPosNext = (Vector2)playerInfo.transform.position + (playerInfo.body.velocity * Time.deltaTime);
 
-            var entities = GetEntities<Components>();
             var blastersToShoot = new List<Blaster>(100);
             foreach(var ai in entities)
             {

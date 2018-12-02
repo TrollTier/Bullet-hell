@@ -8,6 +8,7 @@ public class Laser : MonoBehaviour {
 
     public Vector3 direction;
     public LaserProperties properties;
+    public ShotInfo shotInfo;
     public float flewnDistance;
     public HitInfo hitInfo;
 
@@ -18,9 +19,10 @@ public class Laser : MonoBehaviour {
     }
 
     
-     public void Reset(LaserProperties properties, Vector3 direction)
+     public void Reset(LaserProperties properties, ShotInfo info, Vector3 direction)
     {
         this.properties = properties;
+        this.shotInfo = info;
         this.direction = direction;
 
         hitInfo.HasHit = false;
@@ -31,7 +33,7 @@ public class Laser : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if  (hitInfo.HasHit || Equals(collision.transform.root.gameObject, properties.shotBy)) return;
+        if  (hitInfo.HasHit || Equals(collision.transform.root.gameObject, shotInfo.shotBy)) return;
 
         hitInfo.Particles.Play();
 

@@ -10,11 +10,15 @@ public enum ShootDirections
     Down
 }
 
+public class ShotInfo
+{
+    public ShootDirections shotDirection;
+    public GameObject shotBy;
+}
+
 public class LaserProperties
 {
     public float velocity;
     public float reach;
     public float damage;
-    public ShootDirections shotDirection;
-    public GameObject shotBy;
 }

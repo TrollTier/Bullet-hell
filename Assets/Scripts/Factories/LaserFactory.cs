@@ -38,7 +38,7 @@ class LaserFactory
         Vector3 dir = GetDirection(blaster);
 
         var laserComponent = laser.GetComponent<Laser>();
-        laserComponent.Reset(blaster.GetLaserProperties(), dir);
+        laserComponent.Reset(blaster.GetLaserProperties(), blaster.GetShotInfo(), dir);
 
         laser.transform.position = blaster.transform.position;
         laser.transform.rotation = blaster.transform.rotation;

@@ -20,8 +20,6 @@ public class PlayerMovement : MonoBehaviour {
     void FixedUpdate ()
     {
         SetVelocity();
-        SetDirection();
-
     }
 
     private void SetVelocity()
@@ -67,16 +65,5 @@ public class PlayerMovement : MonoBehaviour {
         }
 
         return (velocityX + velocityY).normalized * speed;
-    }
-
-
-    private void SetDirection()
-    {
-        var mouseWorld = Input.mousePosition;
-        mouseWorld.z = 10;
-        mouseWorld = Camera.main.ScreenToWorldPoint(mouseWorld);
-
-        var direction = (Vector2)(mouseWorld - transform.position);
-        transform.up = direction;
     }
 }

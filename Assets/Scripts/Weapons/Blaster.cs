@@ -18,9 +18,13 @@ class Blaster : MonoBehaviour {
         {
             damage = damage,
             reach = reach,
-            shotBy = transform.root.gameObject,
-            shotDirection = shotDirection,
             velocity = velocity
+        };
+
+        info = new ShotInfo
+        {
+            shotBy = transform.root.gameObject,
+            shotDirection = shotDirection
         };
     }
 
@@ -42,6 +46,9 @@ class Blaster : MonoBehaviour {
     {
         return properties;
     }
+
+    private ShotInfo info;
+    public ShotInfo GetShotInfo() { return info; }
 
 
     public void Fire()

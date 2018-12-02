@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\Systems\TowerSystem.cs" />
     <Compile Include="Assets\Scripts\Systems\VisibleDamageEffectSystem.cs" />
     <Compile Include="Assets\Scripts\Targets\DestroyTarget.cs" />
+    <Compile Include="Assets\Scripts\TurnToMouse.cs" />
     <Compile Include="Assets\Scripts\Weapons\Blaster.cs" />
     <Compile Include="Assets\Scripts\Weapons\DeathRay.cs" />
     <Reference Include="Unity.Entities.Properties">
