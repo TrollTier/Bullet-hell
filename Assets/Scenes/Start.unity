@@ -606,7 +606,7 @@ MonoBehaviour:
   - {fileID: 207852393}
   - {fileID: 915669390}
   - {fileID: 407910599}
-  nextScene: Start
+  nextScene: Ground level
 --- !u!4 &1016133991
 Transform:
   m_ObjectHideFlags: 0
