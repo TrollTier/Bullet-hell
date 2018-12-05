@@ -248,7 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 2
-  RotationSpeed: 0.5
+  RotationSpeed: 1
 --- !u!114 &273240605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,7 +260,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a46f61d8c0120449883166deb457153, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Velocity: {x: 0, y: 0}
+  Direction: 0
+  Rotation: 0
 --- !u!1 &749782764
 GameObject:
   m_ObjectHideFlags: 0

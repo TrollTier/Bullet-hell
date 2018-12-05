@@ -12,59 +12,67 @@ namespace Assets.Scripts.Systems
     {
         struct Components
         {
-            public DestroyerAI ai;
-            public Rigidbody2D body;
-            public SpriteRenderer renderer;
-            public Transform transform;
+            public readonly int Length;
+            public ComponentArray<DestroyerAI> AIs;
+            public ComponentArray<Rigidbody2D> Bodies;
+            public ComponentArray<SpriteRenderer> Renderers;
+            public ComponentArray<Transform> Transforms;
         }
+
+        [Inject] private Components data;
 
         protected override void OnUpdate()
         {
-            var entities = GetEntities<Components>();
+            if (data.Length == 0) return;
+
             var player = Player.info.transform;
-
-            foreach (var destroyer in entities)
+            for (int i = 0; i < data.Length; i++)
             {
-                if (destroyer.ai.ray.CanFire() && destroyer.renderer.isVisible)
-                    destroyer.ai.ray.Fire();
+                var ai = data.AIs[i];
+                var body = data.Bodies[i];
+                var renderer = data.Renderers[i];
+                var transform = data.Transforms[i];
 
-                UpdateDestroyerPositioning(destroyer, player);
-                UpdateDestroyerVelocity(destroyer);
+                if (ai.ray.CanFire() && renderer.isVisible)
+                    ai.ray.Fire();
+
+                UpdateDestroyerPositioning(ai, transform, player);
+                UpdateDestroyerVelocity(ai, transform, body);
             }
         }
 
-        private static void UpdateDestroyerPositioning(Components destroyer, Transform player)
+        private static void UpdateDestroyerPositioning(DestroyerAI ai, Transform transform, Transform player)
         {
-            if (!Mathf.Approximately(destroyer.ai.rotationAngle, 0)) return;
+            if (!Mathf.Approximately(ai.rotationAngle, 0)) return;
 
-            var movingLeft = destroyer.transform.rotation.z > 0f;
-            if (movingLeft && player.position.x > destroyer.transform.position.x)
+            var movingLeft = transform.rotation.z > 0f;
+            if (movingLeft && player.position.x > transform.position.x)
             {
-                destroyer.ai.targetAngle = 270;
-                destroyer.ai.rotationAngle = destroyer.ai.rotationSpeed;
+                ai.targetAngle = 270;
+                ai.rotationAngle = ai.rotationSpeed;
             }
-            else if (!movingLeft && player.position.x < destroyer.transform.position.x)
+            else if (!movingLeft && player.position.x < transform.position.x)
             {
-                destroyer.ai.targetAngle = 90f;
-                destroyer.ai.rotationAngle = -destroyer.ai.rotationSpeed;
+                ai.targetAngle = 90f;
+                ai.rotationAngle = -ai.rotationSpeed;
             }
         }
 
-        private static void UpdateDestroyerVelocity(Components destroyer)
+        private static void UpdateDestroyerVelocity(DestroyerAI ai, Transform transform, Rigidbody2D body)
         {
-            destroyer.body.velocity = destroyer.transform.up * destroyer.ai.speed;
+            body.velocity = transform.up * ai.speed;
 
-            if (!Mathf.Approximately(destroyer.ai.rotationSpeed, 0) && !Mathf.Approximately(destroyer.transform.rotation.eulerAngles.z, destroyer.ai.targetAngle))
+            if (!Mathf.Approximately(ai.rotationSpeed, 0) && !Mathf.Approximately(transform.rotation.eulerAngles.z, ai.targetAngle))
             {
-                var euler = destroyer.transform.rotation.eulerAngles.z;
-                var newZ = (destroyer.ai.rotationAngle > 0 ? 
-                    Mathf.Min(destroyer.ai.targetAngle, euler + destroyer.ai.rotationAngle) : 
-                    Mathf.Max(destroyer.ai.targetAngle, euler + destroyer.ai.rotationAngle));
-                destroyer.transform.rotation = Quaternion.Euler(0f, 0f, newZ);
+                var euler = transform.rotation.eulerAngles.z;
+                var newZ = (ai.rotationAngle > 0 ? 
+                    Mathf.Min(ai.targetAngle, euler + ai.rotationAngle) : 
+                    Mathf.Max(ai.targetAngle, euler + ai.rotationAngle));
+                transform.rotation = Quaternion.Euler(0f, 0f, newZ);
             }
             else
             {
-                destroyer.ai.rotationAngle = 0f;
+                ai.rotationAngle = 0f;
             }
         }
     }
